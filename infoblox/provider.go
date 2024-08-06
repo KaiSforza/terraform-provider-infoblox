@@ -4,20 +4,21 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"math"
+	"strings"
+	"time"
+
 	"github.com/google/uuid"
 	log "github.com/hashicorp/terraform-plugin-log/tflog"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/diag"
 	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/schema"
 	ibclient "github.com/infobloxopen/infoblox-go-client/v2"
-	"math"
-	"strings"
-	"time"
 )
 
 // Common parameters
 const (
 	ttlUndef            = math.MinInt32
-	eaNameForInternalId = "Terraform Internal ID"
+	eaNameForInternalId = "EmployeeID"
 	eaNameForTenantId   = "Tenant ID"
 	altIdSeparator      = "|"
 
